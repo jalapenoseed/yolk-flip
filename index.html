@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#1a120c" />
+  <title>Yolk Flip</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="hud">
+      <div class="brand">YOLK FLIP</div>
+      <div id="ticket" class="ticket">Over Easy</div>
+      <div id="score" class="score">0</div>
+    </header>
+    <canvas id="pan"></canvas>
+    <div class="meters">
+      <div class="meter">
+        <span>HEAT</span>
+        <input id="heat" type="range" min="0.3" max="1.6" step="0.01" value="1" />
+      </div>
+      <div class="meter dual">
+        <div>
+          <span>TOP</span>
+          <div class="bar"><i id="cookTop"></i></div>
+        </div>
+        <div>
+          <span>BOTTOM</span>
+          <div class="bar"><i id="cookBot"></i></div>
+        </div>
+      </div>
+    </div>
+    <footer class="controls">
+      <button id="btnGyro">Enable Gyro</button>
+      <button id="btnCrack">Crack Egg</button>
+      <button id="btnPlate" disabled>Plate</button>
+      <button id="btnFlick">Flick Flip</button>
+    </footer>
+    <p id="hint" class="hint">Tilt like a pan. Flick to flip. Don’t break the yolk.</p>
+  </div>
+  <div id="overlay" class="overlay">
+    <div class="card">
+      <h1>Yolk Flip</h1>
+      <p>Your phone is the pan. Cook the ticket without breaking the yolk.</p>
+      <ul>
+        <li><b>Sunny</b> — no flip, set the white</li>
+        <li><b>Over Easy</b> — one gentle flip, runny yolk</li>
+        <li><b>Over Medium</b> — flip, jammy center</li>
+        <li><b>Over Hard</b> — flip, yolk set, still intact</li>
+      </ul>
+      <p class="tiny">iPhone: tap Enable Gyro, then Allow. Desktop: drag the egg / swipe up to flip.</p>
+      <button id="btnStart">Start Service</button>
+    </div>
+  </div>
+  <div id="toast" class="toast hidden"></div>
+  <script src="game.js"></script>
+</body>
+</html>
